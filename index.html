@@ -705,11 +705,72 @@
         /* ── RESPONSIVE ── */
         @media (max-width: 720px) {
             .instructor-grid { grid-template-columns: 1fr; }
-            .instructor-img { max-width: 260px; }
+            .instructor-img, .instructor-placeholder { max-width: 240px; margin: 0 auto; }
             .countdown-sep { display: none; }
             .garantia { flex-direction: column; padding: 28px 20px; }
             .precio-card { padding: 44px 22px 36px; }
             nav { padding: 12px 16px; }
+        }
+
+        @media (max-width: 480px) {
+            /* Secciones */
+            .section { padding: 56px 0; }
+            .cta-final { padding: 72px 20px; }
+
+            /* Nav */
+            nav { padding: 10px 14px; }
+            .nav-logo { font-size: 1rem; }
+            .nav-cta { padding: 7px 14px; font-size: .66rem; }
+
+            /* Hero */
+            .hero { padding: 100px 20px 60px; }
+            .hero-subtitle { margin-bottom: 32px; }
+            .hero-date { font-size: .82rem; }
+            .countdown { gap: 10px; margin-bottom: 36px; }
+            .countdown-number { font-size: 2.4rem; min-width: 52px; }
+            .countdown-label { font-size: .55rem; }
+
+            /* Botones */
+            .btn-primary { padding: 14px 28px; font-size: .72rem; width: 100%; text-align: center; }
+            .btn-outline  { padding: 13px 20px; font-size: .72rem; width: 100%; text-align: center; }
+            .cta-buttons  { flex-direction: column; align-items: center; }
+
+            /* Para quién */
+            .bullet-text { font-size: 1rem; }
+            .bullets { grid-template-columns: 1fr; }
+
+            /* Qué vas a aprender */
+            .learn-grid { grid-template-columns: 1fr; }
+            .learn-title { font-size: 1.3rem; }
+
+            /* Formato */
+            .format-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+            .format-title { font-size: 1.1rem; }
+            .format-desc  { font-size: .85rem; }
+
+            /* Videos */
+            .video-grid { grid-template-columns: 1fr; }
+
+            /* Instructora */
+            .instructor-name { font-size: 2.2rem; }
+            .instructor-grid { gap: 28px; }
+
+            /* Precio */
+            .precio-card { padding: 40px 18px 30px; }
+            .precio-includes li { font-size: .9rem; }
+            .exalumnas-box { padding: 18px 16px; flex-direction: column; gap: 10px; }
+
+            /* Garantía */
+            .garantia-title { font-size: 1.3rem; }
+
+            /* FAQ */
+            .faq-question { font-size: 1rem; }
+
+            /* CTA final */
+            .cta-final h2 { font-size: clamp(2rem, 8vw, 3rem); }
+
+            /* Section titles */
+            .section-label { font-size: .78rem; letter-spacing: .18em; }
         }
     </style>
 </head>
