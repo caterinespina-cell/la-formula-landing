@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="La Fórmula — Curso de Tarot Online con Cate Espina. Aprendé a leer el tarot con confianza. Próxima edición: 21 de julio 2026.">
+    <title>La Fórmula | Curso de Tarot — Cate Espina</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=League+Spartan:wght@300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg:           #ffffff;
+            --bg2:          #fdf0f7;
+            --gold:         #fc1484;
+            --gold-light:   #fd7cba;
+            --cream:        #1b1353;
+            --muted:        #5a5878;
+            --gray:         #7e7e7f;
+            --border:       rgba(252, 20, 132, 0.3);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            background-color: var(--bg);
+            color: var(--cream);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+            font-size: 1rem;
+            line-height: 1.75;
+            overflow-x: hidden;
+        }
+
+        /* Puntos decorativos sutiles */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image:
+                radial-gradient(2px 2px at  8% 12%, rgba(252,20,132,.15) 0%, transparent 100%),
+                radial-gradient(2px 2px at 23% 42%, rgba(252,20,132,.1) 0%, transparent 100%),
+                radial-gradient(2px 2px at 47% 8%,  rgba(252,20,132,.12) 0%, transparent 100%),
+                radial-gradient(2px 2px at 63% 28%, rgba(252,20,132,.08) 0%, transparent 100%),
+                radial-gradient(2px 2px at 82% 4%,  rgba(252,20,132,.15) 0%, transparent 100%),
+                radial-gradient(2px 2px at 91% 52%, rgba(252,20,132,.1) 0%, transparent 100%),
+                radial-gradient(2px 2px at 14% 68%, rgba(252,20,132,.08) 0%, transparent 100%),
+                radial-gradient(2px 2px at 54% 82%, rgba(252,20,132,.1) 0%, transparent 100%),
+                radial-gradient(2px 2px at 76% 91%, rgba(252,20,132,.08) 0%, transparent 100%),
+                radial-gradient(2px 2px at 33% 58%, rgba(252,20,132,.06) 0%, transparent 100%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        h1          { font-family: 'League Spartan', sans-serif; }
+        h2, h3      { font-family: 'Cairo', sans-serif; }
+
+        .container { max-width: 900px;  margin: 0 auto; padding: 0 24px; }
+        .wide      { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+        section { position: relative; z-index: 1; }
+
+        /* ── NAV ── */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            padding: 14px 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.96);
+            box-shadow: 0 1px 24px rgba(252,20,132,.08);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-logo {
+            font-family: 'League Spartan', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: .08em;
+            color: var(--cream);
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+        .nav-cta {
+            background: var(--gold);
+            color: #ffffff;
+            padding: 8px 22px;
+            border-radius: 2px;
+            text-decoration: none;
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            transition: background .2s;
+        }
+        .nav-cta:hover { background: var(--gold-light); }
+
+        /* ── HERO ── */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 130px 24px 80px;
+            background: linear-gradient(160deg, #1b1353 0%, #2a1060 100%);
+        }
+        /* textos del hero en blanco sobre fondo oscuro */
+        .hero-eyebrow,
+        .hero h1,
+        .hero .hero-subtitle,
+        .hero .hero-date,
+        .hero .countdown-number,
+        .hero .countdown-sep { color: #ffffff; }
+        .hero .countdown-label { color: rgba(255,255,255,.65); }
+        .hero-eyebrow {
+            font-size: .88rem;
+            font-weight: 600;
+            letter-spacing: .3em;
+            text-transform: uppercase;
+            color: var(--cream);
+            margin-bottom: 28px;
+        }
+        .hero h1 {
+            font-size: clamp(4.2rem, 13vw, 10rem);
+            font-weight: 800;
+            letter-spacing: .1em;
+            line-height: 1;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+        .hero-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            font-weight: 400;
+            color: var(--cream);
+            letter-spacing: .04em;
+            margin-bottom: 52px;
+            max-width: 540px;
+        }
+        .hero-date {
+            font-size: .95rem;
+            font-weight: 600;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--cream);
+            margin-bottom: 20px;
+        }
+
+        /* ── COUNTDOWN ── */
+        .countdown {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: flex-start;
+            margin-bottom: 52px;
+        }
+        .countdown-unit {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+        }
+        .countdown-number {
+            font-family: 'League Spartan', sans-serif;
+            font-size: clamp(2.8rem, 6vw, 4.5rem);
+            font-weight: 500;
+            color: var(--cream);
+            line-height: 1;
+            min-width: 72px;
+            text-align: center;
+        }
+        .countdown-label {
+            font-size: .6rem;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+        .countdown-sep {
+            font-family: 'League Spartan', sans-serif;
+            font-size: 3.5rem;
+            color: var(--gold);
+            opacity: .35;
+            padding-top: 2px;
+            line-height: 1;
+        }
+
+        /* ── BOTONES ── */
+        .btn-primary {
+            display: inline-block;
+            background: var(--gold);
+            color: #ffffff;
+            padding: 16px 50px;
+            font-size: .78rem;
+            font-weight: 700;
+            letter-spacing: .15em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 2px;
+            transition: all .2s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+        .btn-outline {
+            display: inline-block;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            padding: 14px 40px;
+            font-size: .78rem;
+            font-weight: 500;
+            letter-spacing: .15em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 2px;
+            transition: all .2s;
+        }
+        .btn-outline:hover { background: rgba(252,20,132,.1); }
+
+        /* ── SECCIONES ── */
+        .section { padding: 84px 0; }
+        .section-alt { background: #fdf0f7; }
+
+        /* Fondos diferenciados por sección */
+        #para-quien  { background: #ffffff; }
+        #contenido   { background: #fdf0f7; }
+        #formato     { background: rgba(162,162,196,.15); }
+        #testimonios { background: linear-gradient(160deg, #1b1353 0%, #2a1060 100%); }
+        #sobre-mi    { background: #ffffff; }
+        #precio      { background: linear-gradient(160deg, #fdf0f7 0%, rgba(252,20,132,.1) 100%); }
+        #garantia    { background: #ffffff; }
+        #faq         { background: rgba(162,162,196,.12); }
+
+        /* textos en blanco para secciones oscuras */
+        #testimonios .section-label,
+        #testimonios .section-title,
+        #testimonios .video-note,
+        #testimonios .video-name,
+        #testimonios .video-desc { color: #ffffff; }
+        #testimonios .video-card { background: rgba(255,255,255,.06); border-color: rgba(252,20,132,.5); }
+
+        .section-label {
+            font-family: 'Cairo', sans-serif;
+            font-size: .9rem;
+            font-weight: 700;
+            letter-spacing: .28em;
+            text-transform: uppercase;
+            color: var(--cream);
+            margin-bottom: 14px;
+            display: block;
+        }
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        .section-intro {
+            font-size: 1.05rem;
+            color: var(--muted);
+            max-width: 580px;
+            margin-bottom: 48px;
+            line-height: 1.8;
+        }
+
+        /* ── PARA QUIÉN ── */
+        .for-who { text-align: center; }
+        .for-who-intro {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: var(--muted);
+            margin-bottom: 48px;
+        }
+        .bullets {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 16px;
+            text-align: left;
+        }
+        .bullet-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 20px;
+            border: 2px solid rgba(252,20,132,.6);
+            border-radius: 3px;
+            background: rgba(252,20,132,.05);
+            transition: border-color .2s;
+        }
+        .bullet-item:hover { border-color: rgba(252,20,132,.4); }
+        .bullet-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 2px; }
+        .bullet-text { font-size: 1.2rem; font-weight: 700; color: var(--cream); line-height: 1.5; }
+
+        /* ── QUÉ VAS A APRENDER ── */
+        .learn-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 0 24px;
+        }
+        .learn-card { padding: 28px 8px 28px; border-top: 2px solid var(--gold); }
+        .learn-number {
+            font-family: 'League Spartan', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 400;
+            color: rgba(252,20,132,.65);
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+        .learn-title {
+            font-family: 'Cairo', sans-serif;
+            font-size: 1.55rem;
+            font-weight: 600;
+            color: var(--cream);
+            margin-bottom: 8px;
+        }
+        .learn-desc { font-size: 1rem; font-weight: 400; color: var(--muted); line-height: 1.65; }
+
+        /* ── FORMATO ── */
+        .format-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+        .format-item {
+            text-align: center;
+            border: 2px solid rgba(252,20,132,.35);
+            border-radius: 6px;
+            padding: 28px 20px;
+            background: rgba(252,20,132,.03);
+            transition: border-color .2s, background .2s;
+        }
+        .format-item:hover {
+            border-color: rgba(252,20,132,.65);
+            background: rgba(252,20,132,.06);
+        }
+        .format-icon { font-size: 2.2rem; margin-bottom: 10px; display: block; }
+        .format-title {
+            font-family: 'Cairo', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--gold);
+            margin-bottom: 6px;
+        }
+        .format-desc { font-size: 1rem; font-weight: 500; color: var(--cream); line-height: 1.6; }
+
+        /* ── TESTIMONIOS ── */
+        .testimonios-section { text-align: center; }
+        .video-note {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--muted);
+            margin-bottom: 40px;
+        }
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+            margin-bottom: 16px;
+        }
+        .video-card {
+            background: var(--bg2);
+            border: 2px solid rgba(252,20,132,.55);
+            border-radius: 4px;
+            overflow: hidden;
+            transition: border-color .2s;
+        }
+        .video-card:hover { border-color: rgba(252,20,132,.45); }
+        .video-card video {
+            width: 100%;
+            display: block;
+            aspect-ratio: 9 / 16;
+            object-fit: cover;
+            background: #fdf0f7;
+        }
+        .video-card-info { padding: 14px 16px; text-align: left; }
+        .video-name {
+            font-family: 'Cairo', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--gold);
+            margin-bottom: 2px;
+        }
+        .video-desc { font-size: .92rem; color: var(--muted); }
+
+        /* Placeholder si no carga el video */
+        .video-fallback {
+            width: 100%;
+            aspect-ratio: 9 / 16;
+            background: linear-gradient(160deg, #fdf0f7, #fff0f7);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            color: var(--muted);
+        }
+        .video-fallback-icon { font-size: 3rem; opacity: .25; }
+        .video-fallback-text { font-size: .72rem; letter-spacing: .12em; opacity: .45; }
+
+        /* ── INSTRUCTORA ── */
+        .instructor-grid {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 56px;
+            align-items: start;
+        }
+        .instructor-photo-wrap {
+            position: relative;
+            width: 100%;
+        }
+        .instructor-img {
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            object-fit: cover;
+            border-radius: 3px;
+            border: 2px solid var(--border);
+            background: var(--bg2);
+            display: block;
+        }
+        .instructor-placeholder {
+            display: none;
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            border-radius: 3px;
+            border: 2px dashed rgba(252,20,132,.4);
+            background: #fdf0f7;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-align: center;
+            padding: 24px;
+        }
+        .instructor-placeholder-icon { font-size: 3rem; opacity: .5; }
+        .instructor-placeholder-text { font-family: 'Cairo', sans-serif; font-size: 1.1rem; font-weight: 600; color: var(--gold); }
+        .instructor-placeholder-hint { font-size: .78rem; color: var(--muted); }
+        .instructor-name {
+            font-family: 'Cairo', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+        .instructor-role {
+            font-size: .72rem;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 28px;
+        }
+        .instructor-bio { font-size: 1rem; color: var(--muted); line-height: 1.85; }
+
+        /* ── PRECIO ── */
+        .precio-section { text-align: center; }
+        .precio-card {
+            max-width: 500px;
+            margin: 0 auto;
+            border: 1px solid var(--gold);
+            border-radius: 4px;
+            padding: 52px 44px 44px;
+            position: relative;
+            background: #ffffff;
+        }
+        .precio-badge {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gold);
+            color: #ffffff;
+            padding: 5px 22px;
+            font-size: .62rem;
+            font-weight: 700;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            border-radius: 2px;
+            white-space: nowrap;
+        }
+        .precio-eyebrow {
+            font-size: .7rem;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 18px;
+        }
+        .precio-amount {
+            font-family: 'League Spartan', sans-serif;
+            font-size: clamp(3.5rem, 9vw, 5.5rem);
+            font-weight: 600;
+            color: var(--cream);
+            line-height: 1;
+        }
+        .precio-currency {
+            font-size: .82rem;
+            color: var(--muted);
+            margin-bottom: 8px;
+            letter-spacing: .1em;
+        }
+        .precio-normal {
+            font-size: .88rem;
+            color: var(--muted);
+            margin-bottom: 10px;
+        }
+        .precio-normal s { opacity: .6; }
+        .precio-discount-pill {
+            display: inline-block;
+            background: rgba(252,20,132,.12);
+            border: 1px solid rgba(252,20,132,.35);
+            color: var(--gold);
+            padding: 5px 16px;
+            border-radius: 2px;
+            font-size: .72rem;
+            letter-spacing: .1em;
+            margin-bottom: 36px;
+        }
+        .precio-includes {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 36px;
+        }
+        .precio-includes li {
+            font-size: 1rem;
+            color: var(--muted);
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid rgba(255,255,255,.05);
+        }
+        .precio-includes li:last-child { border-bottom: none; }
+        .precio-includes li::before { content: '✦'; color: var(--gold); font-size: .55rem; flex-shrink: 0; }
+        .precio-deadline {
+            font-size: .74rem;
+            color: var(--muted);
+            margin-top: 16px;
+        }
+
+        /* ── EX ALUMNAS ── */
+        .exalumnas-box {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            max-width: 580px;
+            margin: 28px auto 0;
+            background: #fff;
+            border: 2px dashed var(--gold-light);
+            border-radius: 16px;
+            padding: 24px 28px;
+            text-align: left;
+        }
+        .exalumnas-icon { font-size: 1.6rem; flex-shrink: 0; margin-top: 2px; }
+        .exalumnas-title {
+            font-family: 'Cairo', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--cream);
+            margin: 0 0 6px;
+        }
+        .exalumnas-text {
+            font-size: .88rem;
+            color: var(--muted);
+            margin: 0 0 12px;
+            line-height: 1.55;
+        }
+        .exalumnas-link {
+            display: inline-block;
+            font-family: 'Cairo', sans-serif;
+            font-weight: 700;
+            font-size: .85rem;
+            color: var(--gold);
+            border: 1.5px solid var(--gold);
+            border-radius: 30px;
+            padding: 7px 20px;
+            text-decoration: none;
+            transition: background .2s, color .2s;
+        }
+        .exalumnas-link:hover { background: var(--gold); color: #fff; }
+
+        /* ── GARANTÍA ── */
+        .garantia {
+            display: flex;
+            align-items: flex-start;
+            gap: 24px;
+            padding: 40px;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            background: rgba(252,20,132,.04);
+            max-width: 720px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .garantia-icon { font-size: 3rem; flex-shrink: 0; }
+        .garantia-title {
+            font-family: 'Cairo', sans-serif;
+            font-size: 1.7rem;
+            color: var(--gold);
+            margin-bottom: 8px;
+        }
+        .garantia-text { font-size: 1rem; color: var(--muted); line-height: 1.75; }
+
+        /* ── FAQ ── */
+        .faq-list { max-width: 700px; margin: 0 auto; }
+        .faq-item { border-bottom: 1px solid var(--border); }
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            color: var(--cream);
+            font-family: 'Cairo', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 400;
+            text-align: left;
+            padding: 22px 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            transition: color .2s;
+        }
+        .faq-question:hover { color: var(--gold); }
+        .faq-icon { color: var(--gold); font-size: 1.3rem; transition: transform .25s; flex-shrink: 0; }
+        .faq-item.open .faq-icon { transform: rotate(45deg); }
+        .faq-answer {
+            font-size: 1rem;
+            color: var(--muted);
+            line-height: 1.75;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .32s ease, padding-bottom .32s ease;
+        }
+        .faq-item.open .faq-answer { max-height: 300px; padding-bottom: 22px; }
+
+        /* ── CTA FINAL ── */
+        .cta-final {
+            text-align: center;
+            padding: 110px 24px;
+            background: linear-gradient(160deg, #1b1353 0%, #2a1060 100%);
+        }
+        .cta-final h2 {
+            color: #ffffff;
+            font-size: clamp(2.6rem, 6vw, 5rem);
+            font-weight: 700;
+            line-height: 1.18;
+            margin-bottom: 24px;
+        }
+        .cta-final p {
+            color: rgba(255,255,255,.8);
+            font-size: .95rem;
+            margin-bottom: 44px;
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.75;
+        }
+        .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+        /* ── FOOTER ── */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 44px 24px;
+            text-align: center;
+        }
+        .footer-logo {
+            font-family: 'League Spartan', sans-serif;
+            font-size: 1.2rem;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 18px;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 28px;
+            margin-bottom: 18px;
+            flex-wrap: wrap;
+        }
+        .footer-links a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: .78rem;
+            letter-spacing: .1em;
+            transition: color .2s;
+        }
+        .footer-links a:hover { color: var(--gold); }
+        .footer-copy { font-size: .72rem; color: #a2a2c4; }
+
+        /* ── ANIMACIÓN ── */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(18px);
+            transition: opacity .65s ease, transform .65s ease;
+        }
+        .fade-in.visible { opacity: 1; transform: none; }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 720px) {
+            .instructor-grid { grid-template-columns: 1fr; }
+            .instructor-img { max-width: 260px; }
+            .countdown-sep { display: none; }
+            .garantia { flex-direction: column; padding: 28px 20px; }
+            .precio-card { padding: 44px 22px 36px; }
+            nav { padding: 12px 16px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+    <a href="https://catespinatarot.com" class="nav-logo">Cate Espina</a>
+    <a href="#inscribirme" class="nav-cta">Inscribirme</a>
+</nav>
+
+
+<!-- ━━━━━━━━━━━━━━━━ HERO ━━━━━━━━━━━━━━━━ -->
+<section class="hero">
+    <p class="hero-eyebrow">✦ &nbsp; Curso de Tarot Online &nbsp; ✦</p>
+    <h1>La Fórmula</h1>
+    <p class="hero-subtitle">Un viaje para conectar con el tarot y redescubrirte</p>
+
+    <p class="hero-date">Próxima edición &nbsp;—&nbsp; 21 de julio 2026</p>
+
+    <div class="countdown" id="countdown">
+        <div class="countdown-unit">
+            <span class="countdown-number" id="cd-days">00</span>
+            <span class="countdown-label">Días</span>
+        </div>
+        <span class="countdown-sep">·</span>
+        <div class="countdown-unit">
+            <span class="countdown-number" id="cd-hours">00</span>
+            <span class="countdown-label">Horas</span>
+        </div>
+        <span class="countdown-sep">·</span>
+        <div class="countdown-unit">
+            <span class="countdown-number" id="cd-minutes">00</span>
+            <span class="countdown-label">Min</span>
+        </div>
+        <span class="countdown-sep">·</span>
+        <div class="countdown-unit">
+            <span class="countdown-number" id="cd-seconds">00</span>
+            <span class="countdown-label">Seg</span>
+        </div>
+    </div>
+
+    <a href="#inscribirme" class="btn-primary">Quiero inscribirme ✦</a>
+</section>
+
+
+<!-- ━━━━━━━━━━━━━━━━ PARA QUIÉN ━━━━━━━━━━━━━━━━ -->
+<section class="section" id="para-quien">
+    <div class="container">
+        <div class="for-who">
+            <span class="section-label fade-in">✦ Para quién es</span>
+            <h2 class="section-title fade-in">Este curso es para vos si…</h2>
+            <p class="for-who-intro fade-in">sentís el llamado del tarot pero no sabés por dónde empezar</p>
+
+            <div class="bullets fade-in">
+                <div class="bullet-item">
+                    <span class="bullet-icon">🌙</span>
+                    <span class="bullet-text">Sentís que el tarot te llama pero no sabés por dónde empezar</span>
+                </div>
+                <div class="bullet-item">
+                    <span class="bullet-icon">✨</span>
+                    <span class="bullet-text">Querés conectar con tu intuición y conocerte más profundamente</span>
+                </div>
+                <div class="bullet-item">
+                    <span class="bullet-icon">🔮</span>
+                    <span class="bullet-text">Buscás herramientas de autoconocimiento y crecimiento personal</span>
+                </div>
+                <div class="bullet-item">
+                    <span class="bullet-icon">💜</span>
+                    <span class="bullet-text">Querés desarrollar tu intuición de manera estructurada y confiable</span>
+                </div>
+                <div class="bullet-item">
+                    <span class="bullet-icon">⭐</span>
+                    <span class="bullet-text">Soñás con poder leer para otros o convertirlo en una actividad profesional</span>
+                </div>
+                <div class="bullet-item">
+                    <span class="bullet-icon">🌟</span>
+                    <span class="bullet-text">Querés aprender en un espacio íntimo, contenido y sin juzgar</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ━━━━━━━━━━━━━━━━ QUÉ VAS A APRENDER ━━━━━━━━━━━━━━━━ -->
+
+
+<!-- ━━━━━━━━━━━━━━━━ FORMATO ━━━━━━━━━━━━━━━━ -->
+<section class="section" id="formato">
+    <div class="container">
+        <span class="section-label fade-in">✦ Cómo funciona</span>
+        <h2 class="section-title fade-in">El formato del curso</h2>
+
+        <div class="format-grid fade-in">
+            <div class="format-item">
+                <span class="format-icon">🖥️</span>
+                <div class="format-title">9 Clases Online</div>
+                <div class="format-desc">Los martes de 19:30 a 22:00 hs, con práctica desde el día 1</div>
+            </div>
+            <div class="format-item">
+                <span class="format-icon">🌿</span>
+                <div class="format-title">Retiro Presencial</div>
+                <div class="format-desc">Un día completo de prácticas y cierre del curso</div>
+            </div>
+            <div class="format-item">
+                <span class="format-icon">📚</span>
+                <div class="format-title">Plataforma de Contenidos</div>
+                <div class="format-desc">Materiales complementarios, PDFs y videos para acompañar tu aprendizaje</div>
+            </div>
+            <div class="format-item">
+                <span class="format-icon">📝</span>
+                <div class="format-title">Evaluaciones Post-Clase</div>
+                <div class="format-desc">Medí tu progreso después de cada clase con ejercicios prácticos</div>
+            </div>
+            <div class="format-item">
+                <span class="format-icon">💬</span>
+                <div class="format-title">Grupo de WhatsApp</div>
+                <div class="format-desc">Acompañamiento y comunidad durante todo el curso</div>
+            </div>
+            <div class="format-item">
+                <span class="format-icon">👥</span>
+                <div class="format-title">Grupos Reducidos</div>
+                <div class="format-desc">Atención personalizada y espacio íntimo de aprendizaje</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ━━━━━━━━━━━━━━━━ TESTIMONIOS ━━━━━━━━━━━━━━━━ -->
+<section class="section section-alt testimonios-section" id="testimonios">
+    <div class="container wide">
+        <span class="section-label fade-in">✦ Testimonios</span>
+        <h2 class="section-title fade-in">Lo que dicen las alumnas</h2>
+        <p class="video-note fade-in">Estas son algunas de las chicas que ya hicieron La Fórmula ✦</p>
+
+        <div class="video-grid fade-in">
+
+            <!-- VIDEO 1 — renombrá tu archivo a testimonio-1.mp4 y ponelo en la carpeta videos/ -->
+            <div class="video-card">
+                <video controls preload="metadata" src="videos/testimonio-1.mp4"
+                       onerror="this.outerHTML='<div class=\'video-fallback\'><span class=\'video-fallback-icon\'>▶</span><span class=\'video-fallback-text\'>Próximamente</span></div>'">
+                </video>
+                <div class="video-card-info">
+                    <div class="video-name">Testimonio 1</div><!-- Cambiá por el nombre real -->
+                    <div class="video-desc">Alumna de La Fórmula</div>
+                </div>
+            </div>
+
+            <!-- VIDEO 2 -->
+            <div class="video-card">
+                <video controls preload="metadata" src="videos/testimonio-2.mp4"
+                       onerror="this.outerHTML='<div class=\'video-fallback\'><span class=\'video-fallback-icon\'>▶</span><span class=\'video-fallback-text\'>Próximamente</span></div>'">
+                </video>
+                <div class="video-card-info">
+                    <div class="video-name">Testimonio 2</div>
+                    <div class="video-desc">Alumna de La Fórmula</div>
+                </div>
+            </div>
+
+            <!-- VIDEO 3 -->
+            <div class="video-card">
+                <video controls preload="metadata" src="videos/testimonio-3.mp4"
+                       onerror="this.outerHTML='<div class=\'video-fallback\'><span class=\'video-fallback-icon\'>▶</span><span class=\'video-fallback-text\'>Próximamente</span></div>'">
+                </video>
+                <div class="video-card-info">
+                    <div class="video-name">Testimonio 3</div>
+                    <div class="video-desc">Alumna de La Fórmula</div>
+                </div>
+            </div>
+
+            <!-- VIDEO 4 — si tenés un cuarto video, descomentar. Si no, borrar este bloque -->
+            <!--
+            <div class="video-card">
+                <video controls preload="metadata" src="videos/testimonio-4.mp4"
+                       onerror="this.outerHTML='<div class=\'video-fallback\'><span class=\'video-fallback-icon\'>▶</span><span class=\'video-fallback-text\'>Próximamente</span></div>'">
+                </video>
+                <div class="video-card-info">
+                    <div class="video-name">Testimonio 4</div>
+                    <div class="video-desc">Alumna de La Fórmula</div>
+                </div>
+            </div>
+            -->
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ━━━━━━━━━━━━━━━━ PRECIO ━━━━━━━━━━━━━━━━ -->
+<section class="section section-alt precio-section" id="precio">
+    <div class="container">
+        <span class="section-label fade-in">✦ Inversión</span>
+        <h2 class="section-title fade-in">Sumate a La Fórmula</h2>
+
+        <div class="fade-in">
+            <div class="precio-card">
+                <div class="precio-badge">🌙 Precio Preventa</div>
+                <div class="precio-eyebrow">Precio preventa</div>
+                <div class="precio-amount">$19.600</div>
+                <div class="precio-currency">Pesos uruguayos</div>
+                <div class="precio-normal">Precio normal: <s>$24.600 UYU</s></div>
+                <div class="precio-discount-pill">Ahorrás un 20% inscribiéndote en preventa</div>
+
+                <ul class="precio-includes">
+                    <li>9 clases online de 2.30 horas</li>
+                    <li>1 retiro de un día para prácticas</li>
+                    <li>Ejercicios prácticos desde el día uno</li>
+                    <li>Plataforma con materiales complementarios en PDF y videos</li>
+                    <li>Evaluaciones después de cada clase para que puedas medir tu progreso</li>
+                    <li>Acompañamiento a través de grupo de WhatsApp</li>
+                    <li>Grupos reducidos</li>
+                </ul>
+
+                <!-- Reemplazá el link con tu formulario o link de pago real -->
+                <a href="https://catespinatarot.com/p/la-formula-1" target="_blank" class="btn-primary" style="display:block;width:100%;text-align:center;">
+                    Quiero inscribirme ✦
+                </a>
+                <p class="precio-deadline">Preventa por tiempo limitado · Inicio del curso: 21 de julio 2026</p>
+            </div>
+        </div>
+
+        <!-- Precio diferencial ex alumnas -->
+        <div class="fade-in exalumnas-box">
+            <span class="exalumnas-icon">💜</span>
+            <div>
+                <p class="exalumnas-title">¿Ya fuiste alumna de otro curso mío?</p>
+                <p class="exalumnas-text">Tenés un precio diferencial especial — distinto al de preventa. Escribime directamente y te cuento el valor exclusivo para vos.</p>
+                <a href="https://wa.me/59892260717?text=Hola%20Cate!%20Fui%20alumna%20de%20otro%20curso%20tuyo%20y%20quisiera%20saber%20el%20precio%20diferencial%20para%20La%20F%C3%B3rmula%20%F0%9F%92%9C" class="exalumnas-link" target="_blank">Escribime para saber mi precio ✦</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ━━━━━━━━━━━━━━━━ GARANTÍA ━━━━━━━━━━━━━━━━ -->
+<section class="section" id="garantia">
+    <div class="container">
+        <div class="garantia fade-in">
+            <div class="garantia-icon">💜</div>
+            <div>
+                <div class="garantia-title">Garantía de satisfacción: aprendé sin miedo</div>
+                <p class="garantia-text">
+                    Quiero que vivas este curso de tarot desde la curiosidad y la conexión, no desde la duda.<br>
+                    Por eso, te doy mi garantía de satisfacción total:<br><br>
+                    💜 Si después de la primera clase sentís que el curso no es lo que esperabas, te devuelvo tu dinero sin problema.<br>
+                    Sin explicaciones, sin estrés, sin vueltas.<br><br>
+                    Confío tanto en este proceso que prefiero que te lleves una buena experiencia, incluso si decidís no seguir.<br><br>
+                    ✨ Probá, sentí, conectá… y si no resuena, está todo bien.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ━━━━━━━━━━━━━━━━ FAQ ━━━━━━━━━━━━━━━━ -->
+<section class="section section-alt" id="faq">
+    <div class="container">
+        <span class="section-label fade-in" style="text-align:center;display:block">✦ Preguntas frecuentes</span>
+        <h2 class="section-title fade-in" style="text-align:center;margin-bottom:48px">Dudas frecuentes</h2>
+
+        <div class="faq-list fade-in">
+            <div class="faq-item">
+                <button class="faq-question">
+                    ¿Cuándo inicia el curso?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    El curso comienza el martes 21 de julio. Son 9 encuentros los martes de 19:30 a 22:00 hs, más un retiro presencial de cierre.
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    ¿Cuál es la inversión?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    En preventa el curso tiene un valor de $19.600 pesos uruguayos. Después de la preventa pasa a $24.600. Podés pagar por Mercado Pago en cuotas, transferencia bancaria o PayPal.
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    ¿Necesito saber tarot para hacer este curso?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    No se requieren conocimientos previos. La Fórmula está diseñado para principiantes que deseen fortalecer su intuición y explorar nuevas posibilidades, incluyendo oportunidades laborales.
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    ¿Las clases quedan grabadas?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    Sí, todas las clases se graban y se suben a la plataforma para que puedas verlas cuando quieras.
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    ¿Qué pasa si no puedo estar en una clase en vivo?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    No hay problema. Las clases quedan grabadas y disponibles en la plataforma para verlas cuando puedas.
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    ¿Cuáles son los métodos de pago?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    Aceptamos Mercado Pago en cuotas, transferencia bancaria y PayPal. Si tenés alguna consulta especial sobre el pago, escribime directo por WhatsApp.
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    ¿Puedo usar este curso como salida laboral?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    Sí. El curso te da herramientas prácticas aplicables desde el primer día para desarrollar una propuesta laboral y empezar a cobrar por tus lecturas.
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    ¿Cómo funciona el acompañamiento por WhatsApp?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    Al inscribirte entrás a un grupo exclusivo donde podés compartir dudas, ejercicios y recibir acompañamiento cercano durante todo el curso.
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    ¿Puedo hacer el curso desde cualquier país?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    Sí, las clases son 100% online y podés sumarte desde donde estés. Solo necesitás conexión a internet. El retiro presencial es en Montevideo, pero si no podés viajar igual podés completar el curso.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ━━━━━━━━━━━━━━━━ CTA FINAL ━━━━━━━━━━━━━━━━ -->
+<section class="cta-final" id="inscribirme">
+    <div class="container">
+        <h2 class="fade-in">¿Lista para empezar<br>tu viaje?</h2>
+        <p class="fade-in">
+            El tarot te está esperando. La próxima edición de La Fórmula empieza el <strong>21 de julio</strong> y los lugares son limitados.
+        </p>
+        <div class="cta-buttons fade-in">
+            <!-- Reemplazá el href con tu link de inscripción / formulario / pago -->
+            <a href="https://catespinatarot.com/p/la-formula-1" target="_blank" class="btn-primary">Quiero inscribirme ✦</a>
+            <a href="https://wa.me/59892260717?text=Hola%20Cate!%20Quiero%20inscribirme%20a%20La%20F%C3%B3rmula%20%F0%9F%8C%99" class="btn-outline" target="_blank">Escribime por WhatsApp</a>
+        </div>
+    </div>
+</section>
+
+
+<!-- ━━━━━━━━━━━━━━━━ INSTRUCTORA ━━━━━━━━━━━━━━━━ -->
+<section class="section" id="sobre-mi">
+    <div class="container">
+        <div class="instructor-grid fade-in">
+            <!-- Poné tu foto en la carpeta img/ con el nombre cate.jpg -->
+            <div class="instructor-photo-wrap">
+                <img class="instructor-img"
+                     src="img/cate.jpg"
+                     alt="Cate Espina — Tarotista"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                <div class="instructor-placeholder">
+                    <span class="instructor-placeholder-icon">📷</span>
+                    <span class="instructor-placeholder-text">Tu foto aquí</span>
+                    <span class="instructor-placeholder-hint">Copiá tu imagen como img/cate.jpg</span>
+                </div>
+            </div>
+            <div>
+                <span class="section-label">✦ La profe</span>
+                <div class="instructor-name">Cate Espina</div>
+                <div class="instructor-role">Tarotista &amp; Numeróloga</div>
+                <p class="instructor-bio">
+                    Soy Cate, tarotista profesional y creadora de La Fórmula. Llevo años leyendo el tarot y acompañando a personas en sus procesos de autoconocimiento y transformación.
+                    <br><br>
+                    Diseñé este curso para que aprendas exactamente lo que yo hubiera necesitado cuando empecé: una fórmula clara, intuitiva y práctica para leer el tarot con confianza desde el primer día.
+                    <br><br>
+                    No te voy a enseñar a memorizar. Te voy a enseñar a <em>conectar</em>.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ━━━━━━━━━━━━━━━━ FOOTER ━━━━━━━━━━━━━━━━ -->
+<footer>
+    <div class="footer-logo">Cate Espina</div>
+    <div class="footer-links">
+        <a href="https://www.instagram.com/catespinatarot" target="_blank">Instagram</a>
+        <a href="https://catespinatarot.com" target="_blank">catespinatarot.com</a>
+        <a href="https://wa.me/59892260717" target="_blank">WhatsApp</a>
+    </div>
+    <div class="footer-copy">© 2026 Cate Espina &nbsp;·&nbsp; La Fórmula — Curso de Tarot</div>
+</footer>
+
+
+<script>
+    /* ─── COUNTDOWN ─── */
+    const target = new Date('2026-07-21T00:00:00');
+
+    function tick() {
+        const diff = target - new Date();
+        if (diff <= 0) {
+            document.getElementById('countdown').innerHTML =
+                '<p style="color:var(--gold);letter-spacing:.2em;font-family:\'Cormorant Garamond\',serif;font-size:1.6rem">¡El curso comenzó! ✦</p>';
+            return;
+        }
+        const d = Math.floor(diff / 864e5);
+        const h = Math.floor((diff % 864e5) / 36e5);
+        const m = Math.floor((diff % 36e5) / 6e4);
+        const s = Math.floor((diff % 6e4) / 1e3);
+        document.getElementById('cd-days').textContent    = String(d).padStart(2,'0');
+        document.getElementById('cd-hours').textContent   = String(h).padStart(2,'0');
+        document.getElementById('cd-minutes').textContent = String(m).padStart(2,'0');
+        document.getElementById('cd-seconds').textContent = String(s).padStart(2,'0');
+    }
+    tick();
+    setInterval(tick, 1000);
+
+    /* ─── FAQ ACCORDION ─── */
+    document.querySelectorAll('.faq-question').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const item = btn.closest('.faq-item');
+            const wasOpen = item.classList.contains('open');
+            document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+            if (!wasOpen) item.classList.add('open');
+        });
+    });
+
+    /* ─── SCROLL FADE-IN ─── */
+    const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+</script>
+
+<!-- ── WHATSAPP FLOTANTE ── -->
+<a class="wa-float"
+   href="https://wa.me/59892260717?text=Hola%20Cate!%20Quisiera%20saber%20m%C3%A1s%20sobre%20La%20F%C3%B3rmula%20%F0%9F%8C%99"
+   target="_blank"
+   aria-label="Escribinos por WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="30" height="30" fill="#fff">
+        <path d="M16 1C7.73 1 1 7.73 1 16c0 2.65.69 5.14 1.9 7.31L1 31l7.89-1.87A14.93 14.93 0 0 0 16 31c8.27 0 15-6.73 15-15S24.27 1 16 1zm0 27.1a12.1 12.1 0 0 1-6.17-1.69l-.44-.26-4.68 1.11 1.14-4.57-.29-.47A12.08 12.08 0 0 1 3.9 16C3.9 9.32 9.32 3.9 16 3.9S28.1 9.32 28.1 16 22.68 28.1 16 28.1zm6.63-9.06c-.36-.18-2.14-1.06-2.47-1.18-.33-.12-.57-.18-.81.18-.24.36-.93 1.18-1.14 1.42-.21.24-.42.27-.78.09-.36-.18-1.52-.56-2.9-1.79-1.07-.96-1.79-2.14-2-2.5-.21-.36-.02-.55.16-.73.16-.16.36-.42.54-.63.18-.21.24-.36.36-.6.12-.24.06-.45-.03-.63-.09-.18-.81-1.95-1.11-2.67-.29-.7-.59-.6-.81-.61-.21-.01-.45-.01-.69-.01s-.63.09-.96.45c-.33.36-1.26 1.23-1.26 3s1.29 3.48 1.47 3.72c.18.24 2.54 3.88 6.16 5.44.86.37 1.53.59 2.05.76.86.27 1.65.23 2.27.14.69-.1 2.14-.88 2.44-1.72.3-.84.3-1.56.21-1.72-.09-.16-.33-.24-.69-.42z"/>
+    </svg>
+    <span class="wa-float-label">¿Consultas?</span>
+</a>
+
+<style>
+.wa-float {
+    position: fixed;
+    bottom: 28px;
+    right: 24px;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #25d366;
+    color: #fff;
+    border-radius: 50px;
+    padding: 12px 18px 12px 14px;
+    text-decoration: none;
+    box-shadow: 0 4px 18px rgba(37,211,102,.45);
+    transition: transform .2s, box-shadow .2s;
+}
+.wa-float:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(37,211,102,.55);
+}
+.wa-float-label {
+    font-family: 'Cairo', sans-serif;
+    font-weight: 700;
+    font-size: .85rem;
+    white-space: nowrap;
+}
+@media (max-width: 480px) {
+    .wa-float { padding: 13px; border-radius: 50%; }
+    .wa-float-label { display: none; }
+}
+</style>
+
+</body>
+</html>
