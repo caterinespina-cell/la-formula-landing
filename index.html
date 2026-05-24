@@ -473,85 +473,113 @@
 
         /* ── PRECIO ── */
         .precio-section { text-align: center; }
-
-        /* Grid de métodos de pago */
-        .pago-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
-            max-width: 780px;
-            margin: 0 auto 32px;
-        }
-        .pago-card {
-            border: 1px solid rgba(252,20,132,.3);
-            border-radius: 18px;
-            padding: 28px 20px 24px;
-            background: #ffffff;
-            box-shadow: 0 4px 20px rgba(27,19,83,.07);
+        .precio-card-wrap { display: flex; justify-content: center; margin-bottom: 32px; }
+        .precio-card {
+            max-width: 500px;
+            width: 100%;
+            border: 2px solid var(--gold);
+            border-radius: 20px;
+            padding: 52px 44px 44px;
             position: relative;
-            transition: border-color .2s, box-shadow .2s;
+            background: #ffffff;
+            box-shadow: 0 8px 32px rgba(27,19,83,.1);
         }
-        .pago-card:hover {
-            border-color: rgba(252,20,132,.55);
-            box-shadow: 0 8px 28px rgba(27,19,83,.12);
-        }
-        .pago-card.destacado {
-            border-color: var(--gold);
-            border-width: 2px;
-            box-shadow: 0 6px 28px rgba(252,20,132,.18);
-        }
-        .pago-badge {
+        .precio-badge {
             position: absolute;
-            top: -12px;
+            top: -14px;
             left: 50%;
             transform: translateX(-50%);
             background: var(--gold);
-            color: #fff;
-            padding: 4px 16px;
-            font-size: .6rem;
+            color: #ffffff;
+            padding: 5px 22px;
+            font-size: .62rem;
             font-weight: 700;
-            letter-spacing: .18em;
+            letter-spacing: .2em;
             text-transform: uppercase;
             border-radius: 2px;
             white-space: nowrap;
         }
-        .pago-icon { font-size: 1.8rem; margin-bottom: 10px; display: block; }
-        .pago-metodo {
-            font-family: 'Montserrat', sans-serif;
-            font-size: .72rem;
-            font-weight: 700;
-            letter-spacing: .14em;
+        .precio-eyebrow {
+            font-size: .7rem;
+            letter-spacing: .1em;
             text-transform: uppercase;
             color: var(--muted);
-            margin-bottom: 12px;
+            margin-bottom: 14px;
         }
-        .pago-amount {
+        .precio-amount {
             font-family: 'Montserrat', sans-serif;
-            font-size: clamp(1.6rem, 3.5vw, 2.4rem);
-            font-weight: 700;
+            font-size: clamp(3.5rem, 9vw, 5.5rem);
+            font-weight: 600;
             color: var(--cream);
             line-height: 1;
-            margin-bottom: 4px;
         }
-        .pago-currency {
-            font-size: .72rem;
+        .precio-currency {
+            font-size: .82rem;
             color: var(--muted);
-            letter-spacing: .08em;
+            margin-bottom: 8px;
+            letter-spacing: .1em;
+        }
+        .precio-normal {
+            font-size: .88rem;
+            color: var(--muted);
             margin-bottom: 10px;
         }
-        .pago-nota {
+        .precio-normal s { opacity: .6; }
+        .precio-discount-pill {
+            display: inline-block;
+            background: rgba(252,20,132,.12);
+            border: 1px solid rgba(252,20,132,.35);
+            color: var(--gold);
+            padding: 5px 16px;
+            border-radius: 2px;
             font-size: .72rem;
-            color: var(--muted);
-            line-height: 1.45;
-            margin-top: 8px;
-            padding-top: 8px;
-            border-top: 1px solid rgba(252,20,132,.15);
+            letter-spacing: .1em;
+            margin-bottom: 28px;
         }
-        .pago-nota strong { color: var(--gold); }
+
+        /* Filas de otros métodos de pago */
+        .otros-pagos {
+            border-top: 1px solid rgba(252,20,132,.2);
+            padding-top: 20px;
+            margin-bottom: 28px;
+        }
+        .otros-pagos-titulo {
+            font-size: .65rem;
+            font-weight: 700;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 14px;
+        }
+        .pago-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 14px;
+            border-radius: 10px;
+            background: rgba(252,20,132,.04);
+            border: 1px solid rgba(252,20,132,.15);
+            margin-bottom: 8px;
+        }
+        .pago-row:last-child { margin-bottom: 0; }
+        .pago-row-icon { font-size: 1.1rem; flex-shrink: 0; }
+        .pago-row-metodo {
+            font-size: .82rem;
+            font-weight: 600;
+            color: var(--cream);
+            flex: 1;
+            text-align: left;
+        }
+        .pago-row-precio {
+            font-size: .88rem;
+            font-weight: 700;
+            color: var(--gold);
+            white-space: nowrap;
+        }
 
         /* Incluye */
         .precio-includes-wrap {
-            max-width: 560px;
+            max-width: 500px;
             margin: 0 auto 32px;
             text-align: left;
         }
@@ -781,7 +809,7 @@
             .instructor-img, .instructor-placeholder { max-width: 240px; margin: 0 auto; }
             .countdown-sep { display: none; }
             .garantia { flex-direction: column; padding: 28px 20px; }
-            .pago-grid { grid-template-columns: 1fr; gap: 20px; }
+            .precio-card { padding: 44px 22px 36px; }
             nav { padding: 12px 16px; }
         }
 
@@ -829,7 +857,7 @@
             .instructor-grid { gap: 28px; }
 
             /* Precio */
-            .pago-grid { grid-template-columns: 1fr; gap: 20px; }
+            .precio-card { padding: 40px 18px 30px; }
             .precio-includes li { font-size: .88rem; }
             .exalumnas-box { padding: 18px 16px; flex-direction: column; gap: 10px; }
 
@@ -1024,37 +1052,33 @@
         <span class="section-label fade-in">✦ Inversión</span>
         <h2 class="section-title fade-in">Sumate a La Fórmula</h2>
 
-        <!-- Métodos de pago -->
-        <div class="pago-grid fade-in">
+        <!-- Tarjeta de precio única -->
+        <div class="fade-in precio-card-wrap">
+            <div class="precio-card">
+                <div class="precio-badge">🌙 Precio Preventa</div>
 
-            <!-- Transferencia -->
-            <div class="pago-card destacado">
-                <div class="pago-badge">🌙 Precio base</div>
-                <span class="pago-icon">🏦</span>
-                <div class="pago-metodo">Transferencia bancaria</div>
-                <div class="pago-amount">$19.600</div>
-                <div class="pago-currency">Pesos uruguayos</div>
-                <div class="pago-nota">Precio de preventa. Precio normal: <strong><s>$24.600</s></strong></div>
+                <div class="precio-eyebrow">Transferencia bancaria</div>
+                <div class="precio-amount">$19.600</div>
+                <div class="precio-currency">Pesos uruguayos</div>
+                <div class="precio-normal">Precio regular: <s>$24.600 UYU</s></div>
+                <div class="precio-discount-pill">Ahorrás un 20% inscribiéndote en preventa</div>
+
+                <!-- Otros métodos de pago -->
+                <div class="otros-pagos">
+                    <div class="otros-pagos-titulo">También podés pagar con</div>
+                    <div class="pago-row">
+                        <span class="pago-row-icon">💳</span>
+                        <span class="pago-row-metodo">Mercado Pago</span>
+                        <span class="pago-row-precio">$21.900 UYU</span>
+                    </div>
+                    <div class="pago-row">
+                        <span class="pago-row-icon">🌐</span>
+                        <span class="pago-row-metodo">PayPal</span>
+                        <span class="pago-row-precio">USD 500</span>
+                    </div>
+                </div>
+
             </div>
-
-            <!-- Mercado Pago -->
-            <div class="pago-card">
-                <span class="pago-icon">💳</span>
-                <div class="pago-metodo">Mercado Pago</div>
-                <div class="pago-amount">$21.900</div>
-                <div class="pago-currency">Pesos uruguayos</div>
-                <div class="pago-nota">Incluye un <strong>10% adicional</strong> por costos de la plataforma</div>
-            </div>
-
-            <!-- PayPal -->
-            <div class="pago-card">
-                <span class="pago-icon">🌐</span>
-                <div class="pago-metodo">PayPal</div>
-                <div class="pago-amount">USD 500</div>
-                <div class="pago-currency">Dólares americanos</div>
-                <div class="pago-nota">Disponible para pagos internacionales</div>
-            </div>
-
         </div>
 
         <!-- Qué incluye -->
@@ -1130,7 +1154,7 @@
                     <span class="faq-icon">+</span>
                 </button>
                 <div class="faq-answer">
-                    En preventa el curso tiene un valor de $19.600 pesos uruguayos. Después de la preventa pasa a $24.600. Podés pagar por transferencia bancaria o PayPal. También por Mercado Pago, con un 10% adicional por los costos de la plataforma.
+                    En preventa el curso tiene un valor de $19.600 pesos uruguayos (transferencia bancaria). También podés pagar por Mercado Pago ($21.900 UYU) o PayPal (USD 500). Después de la preventa el precio base pasa a $24.600.
                 </div>
             </div>
             <div class="faq-item">
@@ -1166,7 +1190,7 @@
                     <span class="faq-icon">+</span>
                 </button>
                 <div class="faq-answer">
-                    Podés pagar mediante transferencia bancaria o PayPal. También está disponible Mercado Pago, con un 10% adicional debido a los costos de la plataforma.<br><br>
+                    Podés pagar mediante transferencia bancaria ($19.600 UYU), Mercado Pago ($21.900 UYU) o PayPal (USD 500).<br><br>
                     Si ninguna de estas opciones te resulta cómoda, podés escribirme por WhatsApp y buscamos la mejor manera ✨ Lo importante para mí es que, si realmente querés sumarte, el dinero no sea un impedimento.
                 </div>
             </div>
