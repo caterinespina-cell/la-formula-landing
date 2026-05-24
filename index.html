@@ -506,6 +506,21 @@
             color: var(--muted);
             margin-bottom: 14px;
         }
+        .precio-eyebrow-green {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: .7rem;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: #1a9e4a;
+            background: rgba(26,158,74,.1);
+            border: 1px solid rgba(26,158,74,.3);
+            border-radius: 20px;
+            padding: 4px 14px;
+            margin-bottom: 14px;
+        }
         .precio-amount {
             font-family: 'Montserrat', sans-serif;
             font-size: clamp(3.5rem, 9vw, 5.5rem);
@@ -577,27 +592,24 @@
             white-space: nowrap;
         }
 
-        /* Incluye */
-        .precio-includes-wrap {
-            max-width: 500px;
-            margin: 0 auto 32px;
-            text-align: left;
-        }
+        /* Incluye — dentro de la tarjeta */
         .precio-includes-titulo {
             font-family: 'Montserrat', sans-serif;
-            font-size: .7rem;
+            font-size: .65rem;
             font-weight: 700;
             letter-spacing: .2em;
             text-transform: uppercase;
             color: var(--muted);
-            margin-bottom: 14px;
-            text-align: center;
+            margin: 24px 0 10px;
+            text-align: left;
         }
         .precio-includes {
             list-style: none;
+            text-align: left;
+            margin-bottom: 28px;
         }
         .precio-includes li {
-            font-size: .92rem;
+            font-size: .88rem;
             color: var(--muted);
             padding: 7px 0;
             display: flex;
@@ -611,6 +623,7 @@
             font-size: .74rem;
             color: var(--muted);
             margin-top: 14px;
+            text-align: center;
         }
 
         /* ── EX ALUMNAS ── */
@@ -1057,7 +1070,7 @@
             <div class="precio-card">
                 <div class="precio-badge">🌙 Precio Preventa</div>
 
-                <div class="precio-eyebrow">Transferencia bancaria</div>
+                <div class="precio-eyebrow-green">♥ Transferencia bancaria</div>
                 <div class="precio-amount">$19.600</div>
                 <div class="precio-currency">Pesos uruguayos</div>
                 <div class="precio-normal">Precio regular: <s>$24.600 UYU</s></div>
@@ -1078,28 +1091,24 @@
                     </div>
                 </div>
 
+                <!-- Qué incluye -->
+                <div class="precio-includes-titulo">¿Qué incluye?</div>
+                <ul class="precio-includes">
+                    <li>9 clases online de 2.30 horas</li>
+                    <li>1 retiro de un día para prácticas</li>
+                    <li>Ejercicios prácticos desde el día uno</li>
+                    <li>Plataforma con materiales complementarios en PDF y videos</li>
+                    <li>Evaluaciones después de cada clase para medir tu progreso</li>
+                    <li>Acompañamiento a través de grupo de WhatsApp</li>
+                    <li>Grupos reducidos</li>
+                </ul>
+
+                <a href="https://catespinatarot-web.vercel.app/?inscribir=la-formula" target="_blank" class="btn-primary" style="display:block;width:100%;text-align:center;">
+                    Quiero inscribirme ✦
+                </a>
+                <p class="precio-deadline">Preventa por tiempo limitado · Inicio del curso: 21 de julio 2026</p>
+
             </div>
-        </div>
-
-        <!-- Qué incluye -->
-        <div class="precio-includes-wrap fade-in">
-            <div class="precio-includes-titulo">¿Qué incluye?</div>
-            <ul class="precio-includes">
-                <li>9 clases online de 2.30 horas</li>
-                <li>1 retiro de un día para prácticas</li>
-                <li>Ejercicios prácticos desde el día uno</li>
-                <li>Plataforma con materiales complementarios en PDF y videos</li>
-                <li>Evaluaciones después de cada clase para medir tu progreso</li>
-                <li>Acompañamiento a través de grupo de WhatsApp</li>
-                <li>Grupos reducidos</li>
-            </ul>
-        </div>
-
-        <div class="fade-in" style="text-align:center;">
-            <a href="https://catespinatarot-web.vercel.app/?inscribir=la-formula" target="_blank" class="btn-primary">
-                Quiero inscribirme ✦
-            </a>
-            <p class="precio-deadline">Preventa por tiempo limitado · Inicio del curso: 21 de julio 2026</p>
         </div>
 
         <!-- Precio diferencial ex alumnas -->
