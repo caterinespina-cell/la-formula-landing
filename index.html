@@ -277,6 +277,42 @@
             font-weight: 300;
         }
 
+        /* ── DOS PERFILES ── */
+        #perfiles { background: linear-gradient(160deg, #fdf0f7 0%, rgba(252,20,132,.08) 100%); }
+        .perfiles-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            max-width: 780px;
+            margin: 0 auto;
+        }
+        .perfil-card {
+            border: 1px solid rgba(252,20,132,.3);
+            border-radius: 20px;
+            padding: 36px 32px;
+            background: #fff;
+            box-shadow: 0 4px 24px rgba(27,19,83,.08);
+        }
+        .perfil-card-alt {
+            background: linear-gradient(160deg, #1b1353 0%, #2a1060 100%);
+            border-color: transparent;
+        }
+        .perfil-card-alt .perfil-titulo { color: #fff; }
+        .perfil-card-alt .perfil-texto  { color: rgba(255,255,255,.8); }
+        .perfil-icon { font-size: 2rem; margin-bottom: 14px; display: block; }
+        .perfil-titulo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--cream);
+            margin-bottom: 14px;
+        }
+        .perfil-texto {
+            font-size: .92rem;
+            color: var(--muted);
+            line-height: 1.75;
+        }
+
         /* ── PARA QUIÉN + FORMATO (dos columnas) ── */
         .two-col-grid {
             display: grid;
@@ -761,6 +797,7 @@
             .garantia { flex-direction: column; padding: 28px 20px; }
             .precio-card { padding: 44px 22px 36px; }
             .two-col-grid { grid-template-columns: 1fr; gap: 40px 0; }
+            .perfiles-grid { grid-template-columns: 1fr; }
             nav { padding: 12px 16px; }
         }
 
@@ -890,6 +927,31 @@
 
         <div class="mini-cta fade-in">
             <a href="https://catespinatarot.com/checkout/?servicio=la-formula" target="_blank" class="btn-primary">Quiero inscribirme ✦</a>
+        </div>
+    </div>
+</section>
+
+
+<!-- ━━━━━━━━━━━━━━━━ DOS PERFILES ━━━━━━━━━━━━━━━━ -->
+<section class="section" id="perfiles">
+    <div class="container">
+        <span class="section-label fade-in" style="text-align:center;display:block">✦ ¿Para qué vas a usar el tarot?</span>
+        <h2 class="section-title fade-in" style="text-align:center;margin-bottom:36px">Lo que te llevás de La Fórmula</h2>
+
+        <div class="perfiles-grid fade-in">
+
+            <div class="perfil-card">
+                <div class="perfil-icon">🌙</div>
+                <h3 class="perfil-titulo">Si lo usás para vos</h3>
+                <p class="perfil-texto">Al terminar La Fórmula vas a tener una herramienta concreta para conocerte más, tomar decisiones con más claridad y confiar en tu intuición. No es magia — es autoconocimiento profundo.</p>
+            </div>
+
+            <div class="perfil-card perfil-card-alt">
+                <div class="perfil-icon">💼</div>
+                <h3 class="perfil-titulo">Si lo convertís en trabajo</h3>
+                <p class="perfil-texto">Con $19.600 de inversión, en solo 10 a 12 lecturas ya recuperás lo que pagaste. Lo que aprendés en La Fórmula te da las herramientas para empezar a cobrar por tus lecturas desde el primer día.</p>
+            </div>
+
         </div>
     </div>
 </section>
