@@ -311,7 +311,26 @@
             font-size: .92rem;
             color: var(--muted);
             line-height: 1.75;
+            margin-bottom: 16px;
         }
+        .perfil-dato {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            background: rgba(252,20,132,.07);
+            border: 1px solid rgba(252,20,132,.25);
+            border-radius: 12px;
+            padding: 14px 16px;
+            font-size: .85rem;
+            color: var(--cream);
+            line-height: 1.6;
+        }
+        .perfil-dato-alt {
+            background: rgba(255,255,255,.1);
+            border-color: rgba(255,255,255,.2);
+            color: rgba(255,255,255,.9);
+        }
+        .perfil-dato-icon { font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
 
         /* ── PARA QUIÉN + FORMATO (dos columnas) ── */
         .two-col-grid {
@@ -944,12 +963,20 @@
                 <div class="perfil-icon">🌙</div>
                 <h3 class="perfil-titulo">Si lo usás para vos</h3>
                 <p class="perfil-texto">Al terminar La Fórmula vas a tener una herramienta concreta para conocerte más, tomar decisiones con más claridad y confiar en tu intuición. No es magia — es autoconocimiento profundo.</p>
+                <div class="perfil-dato">
+                    <span class="perfil-dato-icon">💡</span>
+                    <span>Una consulta de tarot cuesta entre $700 y $2.500. Con La Fórmula aprendés a leerlo vos misma y tenés esa claridad disponible siempre — sin esperar turno, sin depender de nadie, cada vez que lo necesités.</span>
+                </div>
             </div>
 
             <div class="perfil-card perfil-card-alt">
                 <div class="perfil-icon">💼</div>
                 <h3 class="perfil-titulo">Si lo convertís en trabajo</h3>
-                <p class="perfil-texto">Con $19.600 de inversión, en solo 10 a 12 lecturas ya recuperás lo que pagaste. Lo que aprendés en La Fórmula te da las herramientas para empezar a cobrar por tus lecturas desde el primer día.</p>
+                <p class="perfil-texto">Lo que aprendés en La Fórmula te da las herramientas para empezar a cobrar por tus lecturas desde el primer día.</p>
+                <div class="perfil-dato perfil-dato-alt">
+                    <span class="perfil-dato-icon">📈</span>
+                    <span>A precio promedio de mercado, con menos de 15 lecturas ya recuperás lo que invertiste. Todo lo que viene después es ganancia pura.</span>
+                </div>
             </div>
 
         </div>
